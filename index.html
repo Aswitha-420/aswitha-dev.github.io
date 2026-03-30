@@ -23,6 +23,40 @@
             z-index: -1;
         }
 
+        /* Welcome Page */
+        #welcome {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: black;
+            color: #00f7ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        #welcome h1 {
+            font-size: 40px;
+            letter-spacing: 3px;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        #welcome button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #00f7ff;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #00f7ff; }
+            to { text-shadow: 0 0 25px #00f7ff; }
+        }
+
         /* Navbar */
         .navbar {
             position: fixed;
@@ -103,6 +137,12 @@
 
 <body>
 
+<!-- Welcome Screen -->
+<div id="welcome">
+    <h1>WELCOME TO MY ENVIRONMENT</h1>
+    <button onclick="enterSite()">Enter</button>
+</div>
+
 <!-- Navbar -->
 <div class="navbar">
     <a href="#home">Home</a>
@@ -130,8 +170,7 @@
     <div class="box">
         <h2>About Me</h2>
         <p>
-            I am a Cloud & DevOps enthusiast with hands-on experience in AWS services such as EC2, S3, and CloudFront.
-            I focus on building automated pipelines, infrastructure as code, and scalable systems.
+            Cloud & DevOps enthusiast with hands-on experience in AWS, CI/CD pipelines, and infrastructure automation.
         </p>
     </div>
 </div>
@@ -151,17 +190,17 @@
 
         <div class="project">
             <b>CI/CD Pipeline Automation</b>
-            <p>Designed a fully automated deployment pipeline using Jenkins integrated with GitHub and AWS EC2.</p>
+            <p>Automated deployment using Jenkins integrated with AWS EC2.</p>
         </div>
 
         <div class="project">
-            <b>AWS Static Website Deployment</b>
-            <p>Deployed high-availability static website using S3 and CloudFront with global CDN delivery.</p>
+            <b>AWS Static Hosting</b>
+            <p>Hosted website using S3 and CloudFront with global delivery.</p>
         </div>
 
         <div class="project">
             <b>Infrastructure Automation</b>
-            <p>Provisioned AWS infrastructure using Terraform for scalable and repeatable deployments.</p>
+            <p>Provisioned AWS infrastructure using Terraform.</p>
         </div>
 
     </div>
@@ -176,18 +215,26 @@
     </div>
 </div>
 
-<!-- JS for Dynamic Scroll Animation -->
+<!-- JS -->
 <script>
-    const sections = document.querySelectorAll(".section");
+function enterSite() {
+    document.getElementById("welcome").style.display = "none";
+}
 
-    window.addEventListener("scroll", () => {
-        sections.forEach(sec => {
-            const top = sec.getBoundingClientRect().top;
-            if(top < window.innerHeight - 100){
-                sec.classList.add("active");
-            }
-        });
+setTimeout(() => {
+    document.getElementById("welcome").style.display = "none";
+}, 3000);
+
+const sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("active");
+        }
     });
+});
 </script>
 
 </body>
