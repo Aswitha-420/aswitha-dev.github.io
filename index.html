@@ -1,110 +1,132 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Aswitha A | DevOps Engineer</title>
+<title>Aswitha A | DevOps Portfolio</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-            color: white;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+    color: white;
+}
 
-        /* WELCOME PAGE (CLOUD STYLE) */
-        #welcome {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, #74ebd5, #ACB6E5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            text-align: center;
-        }
+/* WELCOME PAGE */
+#welcome {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("welcome.jpg") no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+}
 
-        #welcome h1 {
-            font-size: 40px;
-            color: #0f172a;
-        }
+#welcome::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
 
-        #welcome button {
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: #0f172a;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
+#welcome h1 {
+    position: relative;
+    font-size: 45px;
+    color: #00f7ff;
+}
 
-        /* NAVBAR */
-        .navbar {
-            position: fixed;
-            width: 100%;
-            background: #111;
-            padding: 15px;
-            text-align: center;
-            top: 0;
-        }
+#welcome button {
+    position: relative;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #00f7ff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
 
-        .navbar a {
-            color: white;
-            margin: 15px;
-            text-decoration: none;
-        }
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    padding: 15px;
+    text-align: center;
+    z-index: 1000;
+}
 
-        /* SECTIONS */
-        .section {
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+.navbar a {
+    color: white;
+    margin: 15px;
+    text-decoration: none;
+}
 
-        /* HOME (TECH STYLE) */
-        #home {
-            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-        }
+/* SECTIONS */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+}
 
-        #about {
-            background: #1e1e1e;
-        }
+/* HOME BACKGROUND */
+#home {
+    background: url("home.jpg") no-repeat center/cover;
+}
 
-        #skills {
-            background: #2c3e50;
-        }
+#home::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+}
 
-        #projects {
-            background: #1a1a1a;
-        }
+/* CONTENT BOX */
+.box {
+    position: relative;
+    background: rgba(0,0,0,0.6);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 800px;
+}
 
-        #contact {
-            background: #34495e;
-        }
+/* IMAGE */
+img {
+    width: 140px;
+    border-radius: 50%;
+    border: 3px solid #00f7ff;
+}
 
-        .box {
-            width: 80%;
-            max-width: 700px;
-        }
+/* SKILL IMAGE */
+.skill-img {
+    width: 300px;
+    margin-top: 20px;
+}
 
-        img {
-            width: 140px;
-            border-radius: 50%;
-            border: 3px solid #00eaff;
-        }
+/* PROJECT CARDS */
+.project {
+    background: #111;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 8px;
+}
 
-        .btn {
-            background: #00eaff;
-            padding: 10px 20px;
-            text-decoration: none;
-            color: black;
-            display: inline-block;
-            margin-top: 10px;
-        }
-    </style>
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #00f7ff;
+    color: black;
+    text-decoration: none;
+    margin: 10px;
+}
+</style>
 </head>
 
 <body>
@@ -118,7 +140,6 @@
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="#home">Home</a>
-    <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
@@ -129,16 +150,24 @@
     <div class="box">
         <img src="profile.jpg">
         <h1>Aswitha A</h1>
-        <p>Cloud & DevOps Engineer</p>
-        <p>Building scalable cloud systems and automating deployments.</p>
-    </div>
-</div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
-    <div class="box">
-        <h2>About Me</h2>
-        <p>Passionate about AWS cloud, CI/CD pipelines, and automation.</p>
+        <p>
+        I am a passionate Cloud and DevOps enthusiast with a strong foundation in modern deployment practices.
+        I specialize in building scalable cloud infrastructure using AWS services such as EC2, S3, and CloudFront.
+        I have hands-on experience in automating deployments using CI/CD pipelines with Jenkins.
+        My focus is on creating efficient, reliable, and secure systems in cloud environments.
+        I am continuously learning new tools and technologies in DevOps to enhance my skill set.
+        I enjoy working with Infrastructure as Code using Terraform for automated provisioning.
+        I have experience integrating GitHub with deployment pipelines for continuous delivery.
+        Monitoring and logging using CloudWatch is another area I actively explore.
+        I am interested in containerization and orchestration concepts as well.
+        I aim to build high-availability systems that can scale globally.
+        I am a quick learner and adapt easily to new environments and tools.
+        My goal is to become a professional DevOps Engineer.
+        I am committed to continuous improvement and hands-on practice.
+        I enjoy solving real-world infrastructure problems.
+        I am actively building projects to strengthen my portfolio.
+        </p>
     </div>
 </div>
 
@@ -147,6 +176,9 @@
     <div class="box">
         <h2>Skills</h2>
         <p>AWS | Jenkins | Terraform | GitHub | Linux | CI/CD</p>
+
+        <!-- Your DevOps Image -->
+        <img src="welcome.jpg" class="skill-img">
     </div>
 </div>
 
@@ -154,7 +186,19 @@
 <div id="projects" class="section">
     <div class="box">
         <h2>Projects</h2>
-        <p>CI/CD Pipeline | AWS Hosting | Infrastructure Automation</p>
+
+        <div class="project">
+            🚀 CI/CD Pipeline using Jenkins & AWS
+        </div>
+
+        <div class="project">
+            ☁️ Static Website Hosting using S3 & CloudFront
+        </div>
+
+        <div class="project">
+            ⚙️ Infrastructure Automation using Terraform
+        </div>
+
     </div>
 </div>
 
@@ -162,11 +206,15 @@
 <div id="contact" class="section">
     <div class="box">
         <h2>Contact</h2>
-        <p>Email: aswithaaruchamy04@gmail.com</p>
+
+        <a class="btn" href="https://www.linkedin.com/" target="_blank">LinkedIn</a>
+        <a class="btn" href="https://github.com/" target="_blank">GitHub</a>
+        <a class="btn" href="mailto:yourmail@gmail.com">Email</a>
+        <a class="btn" href="#">Download Resume</a>
+
     </div>
 </div>
 
-<!-- JS -->
 <script>
 function enterSite() {
     document.getElementById("welcome").style.display = "none";
