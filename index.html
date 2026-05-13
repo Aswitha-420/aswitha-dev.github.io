@@ -1,188 +1,681 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>Aswitha A | DevOps Portfolio</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<style>
-body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    color: white;
-}
+    <title>Aswitha A | Cloud & DevOps Portfolio</title>
 
-/* WELCOME PAGE */
-#welcome {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('data:image/jpeg;base64,REPLACE_WELCOME_BASE64');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 2000;
-}
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-#welcome h1 {
-    font-size: 45px;
-    color: #00f7ff;
-}
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-#welcome button {
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #00f7ff;
-    border: none;
-    cursor: pointer;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-/* NAVBAR */
-.navbar {
-    position: fixed;
-    width: 100%;
-    background: black;
-    padding: 15px;
-    text-align: center;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.navbar a {
-    color: white;
-    margin: 15px;
-    text-decoration: none;
-}
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: #050816;
+            color: white;
+            overflow-x: hidden;
+        }
 
-/* SECTIONS */
-.section {
-    min-height: 100vh;
-    padding: 100px 20px;
-    text-align: center;
-}
+        /* Animated Background */
 
-/* HOME BACKGROUND */
-#home {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                url('data:image/jpeg;base64,REPLACE_HOME_BASE64');
-    background-size: cover;
-}
+        body::before {
+            content: "";
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 255, 255, 0.12), transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: -1;
+        }
 
-/* BOX */
-.box {
-    background: rgba(0,0,0,0.6);
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 800px;
-    margin: auto;
-}
+        body::after {
+            content: "";
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(140, 82, 255, 0.15), transparent 70%);
+            bottom: -200px;
+            left: -200px;
+            z-index: -1;
+        }
 
-/* IMAGE */
-img {
-    width: 140px;
-    border-radius: 50%;
-    border: 3px solid #00f7ff;
-}
+        /* Navbar */
 
-/* PROJECT */
-.project {
-    background: #111;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 8px;
-}
+        .navbar {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(14px);
+            background: rgba(5, 8, 22, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #00f7ff;
-    color: black;
-    text-decoration: none;
-    margin: 10px;
-}
-</style>
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #00f5ff;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            margin-left: 30px;
+            font-size: 15px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            background: #00f5ff;
+            left: 0;
+            bottom: -6px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #00f5ff;
+        }
+
+        /* Sections */
+
+        section {
+            min-height: 100vh;
+            padding: 120px 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* Hero */
+
+        .hero {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text h3 {
+            color: #00f5ff;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .hero-text h1 {
+            font-size: 70px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #b8c1ec;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .primary-btn {
+            background: linear-gradient(135deg, #00f5ff, #8c52ff);
+            color: white;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.3);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero Image */
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 370px;
+            height: 370px;
+            object-fit: cover;
+            border-radius: 30px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 245, 255, 0.2);
+            transition: 0.4s;
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Section Title */
+
+        .section-title {
+            font-size: 50px;
+            text-align: center;
+            margin-bottom: 60px;
+            background: linear-gradient(to right, #00f5ff, #8c52ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glass Cards */
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-radius: 25px;
+            padding: 35px;
+            transition: 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 245, 255, 0.4);
+        }
+
+        /* About */
+
+        .about-content {
+            text-align: center;
+            max-width: 950px;
+            margin: auto;
+            line-height: 2;
+            color: #c7d2fe;
+            font-size: 17px;
+        }
+
+        /* Skills */
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-card i {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #00f5ff;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        .skill-card p {
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        /* Projects */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .project-card h3 {
+            font-size: 25px;
+            margin-bottom: 15px;
+            color: #00f5ff;
+        }
+
+        .project-card p {
+            color: #cbd5e1;
+            line-height: 1.8;
+        }
+
+        .project-tags {
+            margin-top: 20px;
+        }
+
+        .project-tags span {
+            display: inline-block;
+            padding: 8px 15px;
+            margin: 5px;
+            border-radius: 30px;
+            background: rgba(0, 245, 255, 0.1);
+            color: #00f5ff;
+            font-size: 13px;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .contact-box p {
+            color: #cbd5e1;
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+        }
+
+        .social-icons a {
+            width: 60px;
+            height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-size: 22px;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .social-icons a:hover {
+            background: linear-gradient(135deg, #00f5ff, #8c52ff);
+            transform: translateY(-6px);
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Responsive */
+
+        @media(max-width:900px) {
+
+            .hero-text h1 {
+                font-size: 50px;
+            }
+
+            .hero-image img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .section-title {
+                font-size: 38px;
+            }
+        }
+
+        @media(max-width:700px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
+                margin: 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 40px;
+            }
+
+            section {
+                padding: 130px 7%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- WELCOME -->
-<div id="welcome">
-    <h1>WELCOME TO MY ENVIRONMENT</h1>
-    <button onclick="enterSite()">Enter</button>
-</div>
+    <!-- Navbar -->
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <a href="#home">Home</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</div>
+    <header class="navbar">
 
-<!-- HOME -->
-<div id="home" class="section">
-    <div class="box">
-        <img src="profile.jpg">
-        <h1>Aswitha A</h1>
+        <div class="logo">Aswitha.</div>
 
-        <p>
-        I am a passionate Cloud and DevOps enthusiast with strong knowledge in AWS services.
-        I work with EC2, S3, and CloudFront for scalable deployment.
-        I build CI/CD pipelines using Jenkins.
-        I automate infrastructure using Terraform.
-        I integrate GitHub for version control and automation.
-        I focus on reliability and scalability.
-        I explore monitoring tools like CloudWatch.
-        I learn continuously about DevOps practices.
-        I aim to build real-world solutions.
-        I enjoy solving infrastructure challenges.
-        I improve deployment efficiency.
-        I work with Linux environments.
-        I understand cloud architecture basics.
-        I develop hands-on projects.
-        I am preparing for DevOps roles.
-        </p>
-    </div>
-</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
 
-<!-- SKILLS -->
-<div id="skills" class="section">
-    <div class="box">
-        <h2>Skills</h2>
-        <p>AWS | Jenkins | Terraform | GitHub | Linux | CI/CD</p>
-    </div>
-</div>
+    </header>
 
-<!-- PROJECTS -->
-<div id="projects" class="section">
-    <div class="box">
-        <h2>Projects</h2>
+    <!-- Hero Section -->
 
-        <div class="project">🚀 CI/CD Pipeline</div>
-        <div class="project">☁️ AWS Hosting</div>
-        <div class="project">⚙️ Terraform Automation</div>
+    <section id="home">
 
-    </div>
-</div>
+        <div class="container hero">
 
-<!-- CONTACT -->
-<div id="contact" class="section">
-    <div class="box">
-        <h2>Contact</h2>
+            <div class="hero-text">
 
-        <a class="btn" href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a class="btn" href="https://github.com" target="_blank">GitHub</a>
-        <a class="btn" href="mailto:yourmail@gmail.com">Email</a>
-        <a class="btn" href="#">Resume</a>
+                <h3>Hello, I'm</h3>
 
-    </div>
-</div>
+                <h1>Aswitha A</h1>
 
-<script>
-function enterSite() {
-    document.getElementById("welcome").style.display = "none";
-}
-</script>
+                <p>
+                    Cloud & DevOps Engineering Enthusiast passionate about
+                    AWS, automation, deployment, and modern cloud technologies.
+                    I enjoy building scalable and efficient cloud-based solutions.
+                </p>
+
+                <div class="hero-btns">
+
+                    <a href="https://www.linkedin.com/in/aswitha-a-7241a033b"
+                        target="_blank"
+                        class="btn primary-btn">
+                        LinkedIn
+                    </a>
+
+                    <a href="#projects"
+                        class="btn secondary-btn">
+                        View Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-image">
+                <img src="profile.jpg" alt="Aswitha Profile">
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <h2 class="section-title">About Me</h2>
+
+            <div class="glass-card about-content">
+
+                <p>
+                    I am currently pursuing Bachelor of Computer Applications (BCA)
+                    at Sri Krishna Arts and Science College.
+                </p>
+
+                <br>
+
+                <p>
+                    My interest lies in Cloud Engineering and DevOps practices.
+                    I love learning new technologies and gaining hands-on experience
+                    through projects related to AWS, deployment, monitoring,
+                    and automation.
+                </p>
+
+                <br>
+
+                <p>
+                    I continuously work on improving my technical knowledge and
+                    building innovative cloud-based solutions for real-world applications.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Skills -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <h2 class="section-title">Technical Skills</h2>
+
+            <div class="skills-grid">
+
+                <div class="glass-card skill-card">
+
+                    <i class="fa-brands fa-aws"></i>
+
+                    <h3>AWS Cloud</h3>
+
+                    <p>
+                        S3, EC2, CloudFront, CloudWatch,
+                        IAM and basic cloud deployment.
+                    </p>
+
+                </div>
+
+                <div class="glass-card skill-card">
+
+                    <i class="fa-solid fa-gears"></i>
+
+                    <h3>DevOps</h3>
+
+                    <p>
+                        Jenkins, GitHub, CI/CD concepts,
+                        automation and deployment workflows.
+                    </p>
+
+                </div>
+
+                <div class="glass-card skill-card">
+
+                    <i class="fa-solid fa-code"></i>
+
+                    <h3>Programming</h3>
+
+                    <p>
+                        HTML, CSS, JavaScript,
+                        Java Fundamentals and Python basics.
+                    </p>
+
+                </div>
+
+                <div class="glass-card skill-card">
+
+                    <i class="fa-solid fa-database"></i>
+
+                    <h3>Database</h3>
+
+                    <p>
+                        SQL, RDBMS concepts,
+                        data handling and query management.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Projects -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <h2 class="section-title">Projects</h2>
+
+            <div class="projects-grid">
+
+                <div class="glass-card project-card">
+
+                    <h3>Donation Portal System</h3>
+
+                    <p>
+                        Developed a secure web-based donation portal using
+                        Python, JavaScript, HTML, CSS, and SQL database
+                        integration for efficient data management.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>SQL</span>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+                <div class="glass-card project-card">
+
+                    <h3>AWS Static Website Hosting</h3>
+
+                    <p>
+                        Designed and deployed a scalable static website using
+                        AWS S3 and CloudFront for faster content delivery
+                        and optimized performance.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>AWS S3</span>
+                        <span>CloudFront</span>
+                        <span>Hosting</span>
+                    </div>
+
+                </div>
+
+                <div class="glass-card project-card">
+
+                    <h3>Automated CI/CD Pipeline</h3>
+
+                    <p>
+                        Built a CI/CD deployment workflow using Jenkins,
+                        Terraform, GitHub, and AWS EC2 for automated
+                        application deployment.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Jenkins</span>
+                        <span>Terraform</span>
+                        <span>EC2</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <h2 class="section-title">Contact Me</h2>
+
+            <div class="glass-card contact-box">
+
+                <p>
+                    Interested in collaborating or connecting?
+                </p>
+
+                <p>
+                    Email: aswithaaruchamy04@gmail.com
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="mailto:aswithaaruchamy04@gmail.com">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/aswitha-a-7241a033b"
+                        target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+        © 2026 Aswitha A • Cloud & DevOps Portfolio
+    </footer>
 
 </body>
+
 </html>
